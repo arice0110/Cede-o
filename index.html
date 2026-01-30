@@ -164,6 +164,28 @@ footer{
   .carrusel img{height:35vh}
   section{padding:28px}
 }
+/* CARRUSEL INTERNO SECCIONES */
+.carrusel-seccion{
+  width:100%;
+  max-width:900px;
+  margin:25px auto;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.carrusel-seccion img{
+  width:100%;
+  height:42vh;
+  max-height:420px;
+  object-fit:cover;
+  display:none;
+}
+
+.carrusel-seccion img.activa{
+  display:block;
+  animation:subir .8s;
+}
 </style>
 </head>
 
@@ -210,8 +232,23 @@ footer{
   <button onclick="mostrar('actualidad')">✨ Actualidad</button>
 </nav>
 
-<section id="historia">
+
+
+<section id="regiones">
+  <h3>🗺️ Navidad por Regiones</h3>
+  <p>
+    En la región Sierra, la Navidad se vive con gran devoción religiosa.
+    Destaca e<section id="historia">
   <h3>📜 Historia de la Navidad</h3>
+
+  <!-- CARRUSEL HISTORIA -->
+  <div class="carrusel-seccion" data-indice="0">
+    <img src="https://i.postimg.cc/q77CVVS2/1769740906561.png" class="activa">
+    <img src="https://i.postimg.cc/bvv2ccWk/1769740914285.png">
+    <img src="https://i.postimg.cc/s22ZddqY/1769740926952.png">
+    <img src="https://i.postimg.cc/nLLQbbgK/1769740934049.png">
+  </div>
+
   <p>
     La Navidad en Ecuador celebra el nacimiento de Jesús y es una de las
     festividades religiosas y culturales más importantes del país.
@@ -228,13 +265,7 @@ footer{
     sino también social y familiar, ya que representa un momento
     de reflexión, unión, perdón y esperanza para las familias ecuatorianas.
   </p>
-</section>
-
-<section id="regiones">
-  <h3>🗺️ Navidad por Regiones</h3>
-  <p>
-    En la región Sierra, la Navidad se vive con gran devoción religiosa.
-    Destaca el tradicional Pase del Niño, una procesión donde participan
+    </section>l tradicional Pase del Niño, una procesión donde participan
     niños vestidos con trajes típicos, acompañados de música, danzas
     y representaciones culturales.
   </p>
@@ -325,6 +356,7 @@ footer{
 </div>
 
 <script>
+<script>
 function entrar(){
   portada.style.display="none";
   contenido.style.display="block";
@@ -335,6 +367,7 @@ function mostrar(id){
   document.getElementById(id).style.display="block";
 }
 
+/* CARRUSEL PRINCIPAL */
 let indice=0;
 let imagenes;
 
@@ -353,11 +386,21 @@ function anterior(){
   mostrarImagen(indice);
 }
 
+/* CARRUSELES INTERNOS */
+function moverCarruselesSeccion(){
+  document.querySelectorAll(".carrusel-seccion").forEach(carrusel=>{
+    let imgs=carrusel.querySelectorAll("img");
+    let actual=[...imgs].findIndex(i=>i.classList.contains("activa"));
+    imgs[actual].classList.remove("activa");
+    imgs[(actual+1)%imgs.length].classList.add("activa");
+  });
+}
+
 window.onload=()=>{
   imagenes=document.querySelectorAll(".carrusel img");
   setInterval(siguiente,4000);
+  setInterval(moverCarruselesSeccion,3500);
 }
 </script>
-
 </body>
 </html>
