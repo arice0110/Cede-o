@@ -165,6 +165,66 @@ footer{
   section{padding:25px}
   .carrusel img{height:35vh}
 }
+/* ========================= */
+/* AJUSTE RESPONSIVE GLOBAL */
+/* ========================= */
+
+#contenido{
+  max-width:1400px;
+  margin:auto;
+  padding:0 15px;
+}
+
+/* CENTRAR TODO */
+header,
+.carrusel,
+nav,
+section,
+footer{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* TEXTOS ADAPTABLES */
+p{
+  font-size:clamp(15px, 2.5vw, 18px);
+  line-height:1.7;
+}
+
+/* BOTONES RESPONSIVE */
+button{
+  font-size:clamp(14px, 2.5vw, 16px);
+}
+
+/* PANTALLAS GRANDES */
+@media(min-width:1600px){
+  body{
+    font-size:18px;
+  }
+}
+
+/* TABLETS */
+@media(max-width:900px){
+  section{
+    padding:30px;
+  }
+}
+
+/* CELULARES */
+@media(max-width:480px){
+  h1{
+    font-size:32px;
+  }
+
+  header h2{
+    font-size:22px;
+  }
+
+  nav button{
+    width:100%;
+    max-width:300px;
+  }
+}
 </style>
 </head>
 
