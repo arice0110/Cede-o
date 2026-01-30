@@ -234,15 +234,17 @@ footer{
 
 
 
-<section id="regiones">
-  <h3>🗺️ Navidad por Regiones</h3>
+
+<section id="tradiciones">
+  <h3>🎁 Tradiciones Navideñas</h3>
   <p>
-    En la región Sierra, la Navidad se vive con gran devoción religiosa.
-    Destaca e<section id="historia">
+    Una de las tradiciones más representativas de la Navidad en Ecuador
+    es la elaboración de nacimientos o pesebres, los cuales representan
+    el nacimiento del Niño Jes<section id="historia">
   <h3>📜 Historia de la Navidad</h3>
 
   <!-- CARRUSEL HISTORIA -->
-  <div class="carrusel-seccion" data-indice="0">
+  <div class="carrusel-seccion">
     <img src="https://i.postimg.cc/q77CVVS2/1769740906561.png" class="activa">
     <img src="https://i.postimg.cc/bvv2ccWk/1769740914285.png">
     <img src="https://i.postimg.cc/s22ZddqY/1769740926952.png">
@@ -252,42 +254,32 @@ footer{
   <p>
     La Navidad en Ecuador celebra el nacimiento de Jesús y es una de las
     festividades religiosas y culturales más importantes del país.
+  </p>
+  <p>
     Su origen se remonta a la época colonial, cuando los españoles
     introdujeron el cristianismo en el territorio ecuatoriano.
   </p>
   <p>
     Con el paso del tiempo, esta celebración fue adaptándose a las
-    costumbres locales, combinando la fe católica con expresiones
-    culturales propias de cada región del Ecuador.
-  </p>
-  <p>
-    Actualmente, la Navidad no solo tiene un significado religioso,
-    sino también social y familiar, ya que representa un momento
-    de reflexión, unión, perdón y esperanza para las familias ecuatorianas.
-  </p>
-    </section>l tradicional Pase del Niño, una procesión donde participan
-    niños vestidos con trajes típicos, acompañados de música, danzas
-    y representaciones culturales.
-  </p>
-  <p>
-    En la región Costa, las celebraciones suelen ser más familiares y
-    festivas, con reuniones, cenas especiales y decoraciones navideñas.
-    Se prioriza la convivencia y el compartir entre familiares y amigos.
-  </p>
-  <p>
-    En la Amazonía, la Navidad se celebra de manera comunitaria,
-    adaptándose a las costumbres ancestrales de los pueblos indígenas.
-    En Galápagos, se combinan actos religiosos con eventos culturales
-    y sociales organizados por la comunidad.
+    costumbres locales y culturales de cada región.
   </p>
 </section>
 
-<section id="tradiciones">
-  <h3>🎁 Tradiciones Navideñas</h3>
+<section id="regiones">
+  <h3>🗺️ Navidad por Regiones</h3>
+
   <p>
-    Una de las tradiciones más representativas de la Navidad en Ecuador
-    es la elaboración de nacimientos o pesebres, los cuales representan
-    el nacimiento del Niño Jesús y son colocados en hogares e iglesias.
+    En la región Sierra, la Navidad se vive con gran devoción religiosa.
+    Destaca el tradicional Pase del Niño.
+  </p>
+  <p>
+    En la Costa predominan reuniones familiares y celebraciones festivas.
+  </p>
+  <p>
+    En la Amazonía y Galápagos se combinan tradiciones ancestrales
+    con actos culturales y comunitarios.
+  </p>
+</section>ús y son colocados en hogares e iglesias.
   </p>
   <p>
     También es común el canto de villancicos, la asistencia a la Misa
@@ -356,12 +348,10 @@ footer{
 </div>
 
 <script>
-<script>
 function entrar(){
   portada.style.display="none";
   contenido.style.display="block";
 }
-
 function mostrar(id){
   document.querySelectorAll("section").forEach(s=>s.style.display="none");
   document.getElementById(id).style.display="block";
