@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Navidad en Ecuador 🎄</title>
 
 <style>
@@ -9,6 +10,10 @@
     --rojo: #b71c1c;
     --verde: #1b5e20;
     --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -19,7 +24,7 @@ body {
     text-align: center;
 }
 
-/* ANIMACIONES */
+/* ANIMACIÓN */
 @keyframes aparecer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -27,23 +32,24 @@ body {
 
 /* PORTADA */
 #portada {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
     background: var(--rojo);
     color: var(--blanco);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: aparecer 1.5s;
+    animation: aparecer 1.2s;
 }
 
 #portada h1 {
-    font-size: 50px;
+    font-size: clamp(32px, 5vw, 50px);
 }
 
 #portada p {
-    max-width: 600px;
-    font-size: 20px;
+    max-width: 650px;
+    font-size: clamp(16px, 2.5vw, 20px);
 }
 
 /* BOTONES */
@@ -61,7 +67,7 @@ button {
 
 button:hover {
     background: var(--rojo);
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 /* CONTENIDO */
@@ -78,7 +84,8 @@ header {
 
 /* CARRUSEL */
 .carrusel {
-    max-width: 850px;
+    max-width: 900px;
+    width: 95%;
     margin: 30px auto;
     border-radius: 18px;
     overflow: hidden;
@@ -87,7 +94,8 @@ header {
 
 .carrusel img {
     width: 100%;
-    height: 420px;
+    height: 45vh;
+    max-height: 450px;
     object-fit: cover;
     display: none;
 }
@@ -101,6 +109,7 @@ header {
 section {
     display: none;
     max-width: 900px;
+    width: 95%;
     margin: 25px auto;
     padding: 25px;
     border: 2px solid var(--verde);
@@ -128,6 +137,23 @@ footer {
     background: var(--verde);
     color: var(--blanco);
 }
+
+/* RESPONSIVE EXTRA */
+@media (max-width: 600px) {
+    nav button {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .carrusel img {
+        height: 35vh;
+    }
+}
 </style>
 </head>
 
@@ -137,8 +163,8 @@ footer {
 <div id="portada">
     <h1>🎄 Navidad en Ecuador 🇪🇨</h1>
     <p>
-        Un recorrido interactivo por las tradiciones, cultura,
-        gastronomía y celebraciones navideñas del Ecuador ✨
+        Una experiencia interactiva para conocer las tradiciones,
+        la cultura y la alegría de la Navidad ecuatoriana ✨
     </p>
     <button onclick="entrar()">🎁 Ingresar al Sitio 🎁</button>
 </div>
@@ -148,7 +174,7 @@ footer {
 
 <header>
     <h2>🎄 Navidad en Ecuador 🎄</h2>
-    <p>Fe, familia, cultura y tradición 🤍</p>
+    <p>Tradición, familia y cultura 🤍</p>
 </header>
 
 <!-- CARRUSEL -->
@@ -173,36 +199,32 @@ footer {
 <section id="historia">
     <h3>📜 Historia</h3>
     <p>
-        La Navidad en Ecuador tiene raíces religiosas profundas.
-        Se celebra el nacimiento de Jesús y se promueve la unión
-        familiar, la solidaridad y la paz social 🤝✨.
+        La Navidad en Ecuador conmemora el nacimiento de Jesús y
+        fortalece los valores de unión familiar, respeto y solidaridad 🤝✨.
     </p>
 </section>
 
 <section id="tradiciones">
     <h3>🎁 Tradiciones</h3>
     <p>
-        Cada región del Ecuador vive la Navidad de manera especial,
-        destacando el famoso Pase del Niño, los nacimientos,
-        villancicos y procesiones 🎶👶.
+        El Pase del Niño, los villancicos, los nacimientos y las
+        reuniones familiares son símbolos centrales de esta celebración 🎶👶.
     </p>
 </section>
 
 <section id="comida">
-    <h3>🍽️ Gastronomía Navideña</h3>
+    <h3>🍽️ Gastronomía</h3>
     <p>
-        La comida es clave en estas fechas: pavo, pollo horneado,
-        arroz especial, ensaladas y postres tradicionales que
-        fortalecen la convivencia familiar 🍗🍚.
+        Platos como pavo, pollo horneado, arroz navideño y postres
+        tradicionales acompañan estas fechas especiales 🍗🍚.
     </p>
 </section>
 
 <section id="impacto">
     <h3>🌍 Impacto Cultural</h3>
     <p>
-        La Navidad impulsa el turismo, el comercio local y refuerza
-        la identidad cultural ecuatoriana, transmitiendo valores
-        de generación en generación 🇪🇨🎄.
+        La Navidad impulsa el turismo, el comercio y refuerza la
+        identidad cultural ecuatoriana 🇪🇨🎄.
     </p>
 </section>
 
@@ -211,13 +233,10 @@ footer {
     <p>Soporte y contacto 👇</p>
 
     <div class="soporte">
-        <a href="danielcedeno0708@gmail.com">
-            <button>📧 Correo</button>
-        </a>
-        <a href="https://wa.me/5930986732549" target="_blank">
+        <a href="https://wa.me/593XXXXXXXXX" target="_blank">
             <button>💬 WhatsApp</button>
         </a>
-        <a href="https://www.facebook.com/alexander.cedeno.988786" target="_blank">
+        <a href="https://facebook.com/TU_USUARIO" target="_blank">
             <button>📘 Facebook</button>
         </a>
     </div>
