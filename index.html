@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navidad en Ecuador 🎄</title>
+
+<style>
+:root {
+    --rojo: #b71c1c;
+    --verde: #1b5e20;
+    --blanco: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--blanco);
+    color: var(--verde);
+    text-align: center;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* PORTADA */
+#portada {
+    height: 100vh;
+    background: var(--rojo);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: aparecer 1.5s;
+}
+
+#portada h1 {
+    font-size: 50px;
+}
+
+#portada p {
+    max-width: 600px;
+    font-size: 20px;
+}
+
+/* BOTONES */
+button {
+    background: var(--verde);
+    color: var(--blanco);
+    border: none;
+    padding: 14px 26px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, background 0.3s;
+    margin: 6px;
+}
+
+button:hover {
+    background: var(--rojo);
+    transform: scale(1.08);
+}
+
+/* CONTENIDO */
+#contenido {
+    display: none;
+    animation: aparecer 1s;
+}
+
+header {
+    background: var(--rojo);
+    color: var(--blanco);
+    padding: 25px;
+}
+
+/* CARRUSEL */
+.carrusel {
+    max-width: 850px;
+    margin: 30px auto;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 3px solid var(--verde);
+}
+
+.carrusel img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: none;
+}
+
+.carrusel img.activa {
+    display: block;
+    animation: aparecer 1s;
+}
+
+/* SECCIONES */
+section {
+    display: none;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 25px;
+    border: 2px solid var(--verde);
+    border-radius: 15px;
+    animation: aparecer 0.8s;
+}
+
+nav {
+    margin: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--rojo);
+    color: var(--blanco);
+    padding: 25px;
+}
+
+.soporte button {
+    background: var(--blanco);
+    color: var(--verde);
+}
+
+.soporte button:hover {
+    background: var(--verde);
+    color: var(--blanco);
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+<div id="portada">
+    <h1>🎄 Navidad en Ecuador 🇪🇨</h1>
+    <p>
+        Un recorrido interactivo por las tradiciones, cultura,
+        gastronomía y celebraciones navideñas del Ecuador ✨
+    </p>
+    <button onclick="entrar()">🎁 Ingresar al Sitio 🎁</button>
+</div>
+
+<!-- CONTENIDO -->
+<div id="contenido">
+
+<header>
+    <h2>🎄 Navidad en Ecuador 🎄</h2>
+    <p>Fe, familia, cultura y tradición 🤍</p>
+</header>
+
+<!-- CARRUSEL -->
+<div class="carrusel">
+    <img src="https://images.unsplash.com/photo-1608889175123-8ee4aaf6c2c5" class="activa">
+    <img src="https://images.unsplash.com/photo-1544025162-d76694265947">
+    <img src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb">
+</div>
+
+<div>
+    <button onclick="anterior()">⬅️</button>
+    <button onclick="siguiente()">➡️</button>
+</div>
+
+<nav>
+    <button onclick="mostrar('historia')">📜 Historia</button>
+    <button onclick="mostrar('tradiciones')">🎁 Tradiciones</button>
+    <button onclick="mostrar('comida')">🍽️ Gastronomía</button>
+    <button onclick="mostrar('impacto')">🌍 Impacto Cultural</button>
+</nav>
+
+<section id="historia">
+    <h3>📜 Historia</h3>
+    <p>
+        La Navidad en Ecuador tiene raíces religiosas profundas.
+        Se celebra el nacimiento de Jesús y se promueve la unión
+        familiar, la solidaridad y la paz social 🤝✨.
+    </p>
+</section>
+
+<section id="tradiciones">
+    <h3>🎁 Tradiciones</h3>
+    <p>
+        Cada región del Ecuador vive la Navidad de manera especial,
+        destacando el famoso Pase del Niño, los nacimientos,
+        villancicos y procesiones 🎶👶.
+    </p>
+</section>
+
+<section id="comida">
+    <h3>🍽️ Gastronomía Navideña</h3>
+    <p>
+        La comida es clave en estas fechas: pavo, pollo horneado,
+        arroz especial, ensaladas y postres tradicionales que
+        fortalecen la convivencia familiar 🍗🍚.
+    </p>
+</section>
+
+<section id="impacto">
+    <h3>🌍 Impacto Cultural</h3>
+    <p>
+        La Navidad impulsa el turismo, el comercio local y refuerza
+        la identidad cultural ecuatoriana, transmitiendo valores
+        de generación en generación 🇪🇨🎄.
+    </p>
+</section>
+
+<footer>
+    <p>🎄 Proyecto Escolar | Navidad en Ecuador 🇪🇨</p>
+    <p>Soporte y contacto 👇</p>
+
+    <div class="soporte">
+        <a href="mailto:TU_CORREO@gmail.com">
+            <button>📧 Correo</button>
+        </a>
+        <a href="https://wa.me/593XXXXXXXXX" target="_blank">
+            <button>💬 WhatsApp</button>
+        </a>
+        <a href="https://facebook.com/TU_USUARIO" target="_blank">
+            <button>📘 Facebook</button>
+        </a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+function entrar() {
+    document.getElementById("portada").style.display = "none";
+    document.getElementById("contenido").style.display = "block";
+}
+
+function mostrar(id) {
+    document.querySelectorAll("section").forEach(s => s.style.display = "none");
+    document.getElementById(id).style.display = "block";
+}
+
+let indice = 0;
+let imagenes = document.querySelectorAll(".carrusel img");
+
+function mostrarImagen(i) {
+    imagenes.forEach(img => img.classList.remove("activa"));
+    imagenes[i].classList.add("activa");
+}
+
+function siguiente() {
+    indice = (indice + 1) % imagenes.length;
+    mostrarImagen(indice);
+}
+
+function anterior() {
+    indice = (indice - 1 + imagenes.length) % imagenes.length;
+    mostrarImagen(indice);
+}
+
+setInterval(siguiente, 4500);
+</script>
+
+</body>
+  </html>
