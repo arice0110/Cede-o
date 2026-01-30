@@ -6,153 +6,163 @@
 <title>Navidad en Ecuador 🎄</title>
 
 <style>
-:root {
-    --rojo: #b71c1c;
-    --verde: #1b5e20;
-    --blanco: #ffffff;
+:root{
+  --rojo:#b71c1c;
+  --verde:#1b5e20;
+  --fondo:#f1ede6;
 }
 
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, #ffffff88, transparent),
+    linear-gradient(180deg,#f7f3ee,#e0d9ce);
+  color:var(--verde);
+  text-align:center;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--blanco);
-    color: var(--verde);
-    text-align: center;
-}
-
-/* ANIMACIÓN */
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ANIMACIONES */
+@keyframes subir{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
 }
 
 /* PORTADA */
-#portada {
-    min-height: 100vh;
-    padding: 20px;
-    background: var(--rojo);
-    color: var(--blanco);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: aparecer 1.2s;
+#portada{
+  min-height:100vh;
+  background:
+    linear-gradient(180deg,var(--rojo),#8e1515),
+    url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+  animation:subir 1.2s;
 }
 
-#portada h1 {
-    font-size: clamp(32px, 5vw, 50px);
+#portada h1{
+  font-size:clamp(38px,5vw,56px);
+  margin-bottom:10px;
 }
 
-#portada p {
-    max-width: 650px;
-    font-size: clamp(16px, 2.5vw, 20px);
+#portada p{
+  max-width:750px;
+  font-size:clamp(17px,2.5vw,21px);
+  opacity:.95;
 }
 
 /* BOTONES */
-button {
-    background: var(--verde);
-    color: var(--blanco);
-    border: none;
-    padding: 14px 26px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.3s, background 0.3s;
-    margin: 6px;
+button{
+  background:var(--verde);
+  color:white;
+  border:none;
+  padding:14px 30px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:16px;
+  margin:6px;
+  transition:.35s;
 }
 
-button:hover {
-    background: var(--rojo);
-    transform: scale(1.05);
+button:hover{
+  background:white;
+  color:var(--verde);
+  transform:scale(1.08);
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
 }
 
 /* CONTENIDO */
-#contenido {
-    display: none;
-    animation: aparecer 1s;
-}
+#contenido{display:none}
 
-header {
-    background: var(--rojo);
-    color: var(--blanco);
-    padding: 25px;
+/* HEADER */
+header{
+  background:linear-gradient(90deg,var(--rojo),#a11616);
+  color:white;
+  padding:40px 15px;
 }
 
 /* CARRUSEL */
-.carrusel {
-    max-width: 900px;
-    width: 95%;
-    margin: 30px auto;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 3px solid var(--verde);
+.carrusel{
+  width:95%;
+  max-width:1050px;
+  margin:45px auto;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(0,0,0,.3);
 }
 
-.carrusel img {
-    width: 100%;
-    height: 45vh;
-    max-height: 450px;
-    object-fit: cover;
-    display: none;
+.carrusel img{
+  width:100%;
+  height:52vh;
+  max-height:520px;
+  object-fit:cover;
+  display:none;
 }
 
-.carrusel img.activa {
-    display: block;
-    animation: aparecer 1s;
+.carrusel img.activa{
+  display:block;
+  animation:subir .9s;
+}
+
+/* NAV */
+nav{
+  margin:35px;
 }
 
 /* SECCIONES */
-section {
-    display: none;
-    max-width: 900px;
-    width: 95%;
-    margin: 25px auto;
-    padding: 25px;
-    border: 2px solid var(--verde);
-    border-radius: 15px;
-    animation: aparecer 0.8s;
+section{
+  display:none;
+  max-width:1050px;
+  margin:35px auto;
+  padding:40px;
+  border-radius:26px;
+  background:rgba(255,255,255,.8);
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  animation:subir .7s;
+  transition:.3s;
 }
 
-nav {
-    margin: 20px;
+section:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+
+section h3{
+  color:var(--rojo);
+  margin-top:0;
+  font-size:26px;
 }
 
 /* FOOTER */
-footer {
-    background: var(--rojo);
-    color: var(--blanco);
-    padding: 25px;
+footer{
+  background:
+    linear-gradient(180deg,var(--rojo),#8e1515);
+  color:white;
+  padding:40px 15px;
+  margin-top:50px;
 }
 
-.soporte button {
-    background: var(--blanco);
-    color: var(--verde);
+.soporte button{
+  background:white;
+  color:var(--verde);
 }
 
-.soporte button:hover {
-    background: var(--verde);
-    color: var(--blanco);
+.soporte button:hover{
+  background:var(--verde);
+  color:white;
 }
 
-/* RESPONSIVE EXTRA */
-@media (max-width: 600px) {
-    nav button {
-        width: 90%;
-        max-width: 300px;
-    }
-
-    button {
-        padding: 14px;
-        font-size: 15px;
-    }
-
-    .carrusel img {
-        height: 35vh;
-    }
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav button{width:90%; max-width:340px}
+  .carrusel img{height:35vh}
+  section{padding:28px}
 }
 </style>
 </head>
@@ -161,120 +171,141 @@ footer {
 
 <!-- PORTADA -->
 <div id="portada">
-    <h1>🎄 Navidad en Ecuador 🇪🇨</h1>
-    <p>
-        Una experiencia interactiva para conocer las tradiciones,
-        la cultura y la alegría de la Navidad ecuatoriana ✨
-    </p>
-    <button onclick="entrar()">🎁 Ingresar al Sitio 🎁</button>
+  <h1>🎄 Navidad en Ecuador 🇪🇨</h1>
+  <p>
+    Una celebración llena de tradición, cultura, fe y unión familiar  
+    que se vive de manera especial en cada rincón del país ✨
+  </p>
+  <button onclick="entrar()">🎁 Entrar al Sitio</button>
 </div>
 
 <!-- CONTENIDO -->
 <div id="contenido">
 
 <header>
-    <h2>🎄 Navidad en Ecuador 🎄</h2>
-    <p>Tradición, familia y cultura 🤍</p>
+  <h2>🎄 Tradiciones Navideñas del Ecuador 🎄</h2>
+  <p>Una fiesta que une a todo el país 🤍</p>
 </header>
 
 <!-- CARRUSEL -->
 <div class="carrusel">
-    <img src="https://images.unsplash.com/photo-1608889175123-8ee4aaf6c2c5" class="activa">
-    <img src="https://images.unsplash.com/photo-1544025162-d76694265947">
-    <img src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb">
+  <img src="https://i.postimg.cc/kX6zf0Dv/1769736472322.png" class="activa">
+  <img src="https://i.postimg.cc/WbFCXBtg/1769736342653.png">
+  <img src="https://i.postimg.cc/KvkwJ64r/1769736280205.png">
+  <img src="https://i.postimg.cc/ZKB2VG0P/1769736244272.png">
+  <img src="https://i.postimg.cc/Kv6VV0gp/1769736238077.png">
+  <img src="https://i.postimg.cc/02T33VJW/1769736230470.png">
 </div>
 
 <div>
-    <button onclick="anterior()">⬅️</button>
-    <button onclick="siguiente()">➡️</button>
+  <button onclick="anterior()">⬅️</button>
+  <button onclick="siguiente()">➡️</button>
 </div>
 
 <nav>
-    <button onclick="mostrar('historia')">📜 Historia</button>
-    <button onclick="mostrar('tradiciones')">🎁 Tradiciones</button>
-    <button onclick="mostrar('comida')">🍽️ Gastronomía</button>
-    <button onclick="mostrar('impacto')">🌍 Impacto Cultural</button>
+  <button onclick="mostrar('historia')">📜 Historia</button>
+  <button onclick="mostrar('regiones')">🗺️ Regiones</button>
+  <button onclick="mostrar('tradiciones')">🎁 Tradiciones</button>
+  <button onclick="mostrar('gastronomia')">🍽️ Gastronomía</button>
+  <button onclick="mostrar('actualidad')">✨ Actualidad</button>
 </nav>
 
 <section id="historia">
-    <h3>📜 Historia</h3>
-    <p>
-        La Navidad en Ecuador conmemora el nacimiento de Jesús y
-        fortalece los valores de unión familiar, respeto y solidaridad 🤝✨.
-    </p>
+  <h3>📜 Historia de la Navidad</h3>
+  <p>
+    La Navidad en Ecuador celebra el nacimiento de Jesús
+    y representa una de las festividades más importantes del país,
+    transmitida de generación en generación como símbolo de fe y esperanza.
+  </p>
+</section>
+
+<section id="regiones">
+  <h3>🗺️ Navidad por Regiones</h3>
+  <p>
+    Cada región celebra de manera distinta:
+    en la Sierra el Pase del Niño,
+    en la Costa reuniones familiares,
+    en la Amazonía celebraciones comunitarias
+    y en Galápagos eventos culturales.
+  </p>
 </section>
 
 <section id="tradiciones">
-    <h3>🎁 Tradiciones</h3>
-    <p>
-        El Pase del Niño, los villancicos, los nacimientos y las
-        reuniones familiares son símbolos centrales de esta celebración 🎶👶.
-    </p>
+  <h3>🎁 Tradiciones Navideñas</h3>
+  <p>
+    Los nacimientos, villancicos, misas,
+    intercambio de regalos y actos solidarios
+    fortalecen los lazos familiares y culturales.
+  </p>
 </section>
 
-<section id="comida">
-    <h3>🍽️ Gastronomía</h3>
-    <p>
-        Platos como pavo, pollo horneado, arroz navideño y postres
-        tradicionales acompañan estas fechas especiales 🍗🍚.
-    </p>
+<section id="gastronomia">
+  <h3>🍽️ Gastronomía Navideña</h3>
+  <p>
+    El pavo, chancho hornado, tamales,
+    arroz navideño y buñuelos
+    acompañan las reuniones familiares.
+  </p>
 </section>
 
-<section id="impacto">
-    <h3>🌍 Impacto Cultural</h3>
-    <p>
-        La Navidad impulsa el turismo, el comercio y refuerza la
-        identidad cultural ecuatoriana 🇪🇨🎄.
-    </p>
+<section id="actualidad">
+  <h3>✨ Navidad en la Actualidad</h3>
+  <p>
+    Actualmente la Navidad combina tradición y modernidad,
+    con decoraciones, luces, eventos públicos
+    y mensajes de paz y solidaridad.
+  </p>
 </section>
 
 <footer>
-    <p>🎄 Proyecto Escolar | Navidad en Ecuador 🇪🇨</p>
-    <p>Soporte y contacto 👇</p>
-
-    <div class="soporte">
-        <a href="https://wa.me/5930986732549" target="_blank">
-            <button>💬 WhatsApp</button>
-        </a>
-        <a href="https://www.facebook.com/alexander.cedeno.988786" target="_blank">
-            <button>📘 Facebook</button>
-        </a>
-    </div>
+  <p>🎄 Proyecto Escolar | Navidad en Ecuador 🇪🇨</p>
+  <p>Soporte y contacto</p>
+  <div class="soporte">
+    <a href="https://wa.me/5930986732549" target="_blank">
+      <button>💬 WhatsApp</button>
+    </a>
+    <a href="https://www.facebook.com/alexander.cedeno.988786" target="_blank">
+      <button>📘 Facebook</button>
+    </a>
+  </div>
 </footer>
 
 </div>
 
 <script>
-function entrar() {
-    document.getElementById("portada").style.display = "none";
-    document.getElementById("contenido").style.display = "block";
+function entrar(){
+  portada.style.display="none";
+  contenido.style.display="block";
 }
 
-function mostrar(id) {
-    document.querySelectorAll("section").forEach(s => s.style.display = "none");
-    document.getElementById(id).style.display = "block";
+function mostrar(id){
+  document.querySelectorAll("section").forEach(s=>s.style.display="none");
+  document.getElementById(id).style.display="block";
 }
 
-let indice = 0;
-let imagenes = document.querySelectorAll(".carrusel img");
+let indice=0;
+let imagenes;
 
-function mostrarImagen(i) {
-    imagenes.forEach(img => img.classList.remove("activa"));
-    imagenes[i].classList.add("activa");
+function mostrarImagen(i){
+  imagenes.forEach(img=>img.classList.remove("activa"));
+  imagenes[i].classList.add("activa");
 }
 
-function siguiente() {
-    indice = (indice + 1) % imagenes.length;
-    mostrarImagen(indice);
+function siguiente(){
+  indice=(indice+1)%imagenes.length;
+  mostrarImagen(indice);
 }
 
-function anterior() {
-    indice = (indice - 1 + imagenes.length) % imagenes.length;
-    mostrarImagen(indice);
+function anterior(){
+  indice=(indice-1+imagenes.length)%imagenes.length;
+  mostrarImagen(indice);
 }
 
-setInterval(siguiente, 4500);
+window.onload=()=>{
+  imagenes=document.querySelectorAll(".carrusel img");
+  setInterval(siguiente,4000);
+}
 </script>
 
 </body>
-    </html>
+</html>
